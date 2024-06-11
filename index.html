@@ -1,0 +1,643 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    /* margin: 16px 0px; */
+    margin: 0px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+<link rel="icon" type="image/x-icon" href="mfiles/favicon.png">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title> BAKU: An Efficient Transformer for Multi-Task Policy Learning</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:title" content="OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+    </head>
+
+ <body>
+
+
+<div class="container">
+    <div class="paper-title">
+    <h1> 
+        BAKU: An Efficient Transformer for Multi-Task Policy Learning
+    </div>
+
+    <!-- <div id="authors">
+        <center>
+            <div class="author-row-new">
+                <a href="">ABCD*</a>,
+                <a href="">EFGH*</a>
+            </div>
+        </center>
+        <center>
+
+        <br>* Equal contribution
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> description </span> 
+                    Paper
+                </a>
+            <div class="paper-btn-parent">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> description </span> 
+                    arXiv
+                </a>
+            <div class="paper-btn-coming-soon">
+                <a class="paper-btn" href="">
+                        <span class="material-icons"> code </span>
+                    Code
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+    <br>
+<!-- 
+    <div class="embed-container">
+        <iframe width="640" height="360" 
+        src="https://www.youtube.com/embed/MIqVHN8L5vU?si=xvYkDPdyr7DfHyON" 
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+    <style>
+        .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        }
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        }
+    </style> -->
+
+    
+    <section id="abstract"/>
+        <!-- <hr> -->
+        <h2>Abstract</h2>
+        <div class="flex-row">
+            <p>
+                Training generalist agents capable of solving diverse tasks is challenging, often
+                requiring large datasets of expert demonstrations. This is particularly problematic
+                in robotics, where each data point requires physical execution of actions in the
+                real world. Thus, there is a pressing need for architectures that can maximally
+                absorb available training data. In this work, we present BAKU, a simple transformer
+                architecture that enables efficient learning of multitask robot policies. BAKU builds
+                upon recent advancements in offline imitation learning and meticulously combines
+                observation trunks, action chunking, multi-sensory observations, and action heads
+                to substantially improve upon prior work. Our experiments on 129 simulated tasks9
+                across LIBERO, Meta-World suite, and the Deepmind Control suite exhibit an
+                overall 18% absolute improvement over RT-1 and MT-ACT, with a 36% absolute
+                improvement on the harder LIBERO benchmark. On 30 real-world manipulation
+                tasks, given an average of just 17 demonstrations per task, BAKU achieves a 91%
+                success rate.
+            </p>
+        </div>
+    </section>
+    <section id="method"/>
+
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/intro.jpeg" style="width:900">
+            </div>
+        </center>
+
+        <!-- Video style -->
+        <style>
+            select {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+        
+            video {
+                display: block;
+                max-width: 500px;
+                margin-top: 20px;
+            }
+        </style>
+    </section>
+
+    <section>
+        <hr>
+        <h2>Proposed Architecture</h2>
+        <p>
+            BAKU is broken down into modality-specific sensory encoders, an observation trunk, and an action head 
+            predicting a chunk of actions. BAKU takes as input observations from multiple camera views, robot 
+            proprioceptive state and a task instruction and enables performing closed-loop control at 10Hz in our 
+            real world experiments on the xArm.
+        </p>
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/architecture.jpeg" style="width:900">
+            </div>
+        </center>
+        <br><br>
+
+        <hr>
+        <h2>Simulated environments</h2>
+        <p>
+            BAKU is evaluated on 3 simulated benchmarks - LIBERO, Meta-World, and DM Control Suite.
+        </p>
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/simulation.jpeg" style="width:900">
+            </div>
+        </center>
+        <br><br>
+
+        <hr>
+        <h2>Multi-task Performance</h2>
+        <p>
+            BAKU is evaluated on 129 tasks across 3 simulated benchmarks - LIBERO, Meta-World, and DM Control Suite. 
+            BAKU achieves an overall 18% absolute improvement over RT-1 and MT-ACT, with a 36% absolute improvement 
+            on the harder LIBERO benchmark. On our real-world xArm multi-task kitchen environment on 30 tasks, 
+            BAKU achieves a 91% success rate, outperforming the strongest baseline by 35%.
+        </p>
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/mt_results.png" style="width:800">
+            </div>
+        </center>
+        <br><br>
+
+        <hr>
+        <h2>Real World Rollouts</h2>
+        Utilizing BAKU, we execute a <strong><span style="color: green;">total of 30 tasks</span></strong> on our xArm multi-task kitchen environment.
+        All videos are played at 1X speed.
+        <br>
+        <h3> Rollouts</h3>
+        <label for="video-select1">Task:</label>
+        <select id="video-select1" onchange="displayVideo1()">
+            <option value="mfiles/videos/close_oven_door.mp4">close oven door</option>
+            <option value="mfiles/videos/open_oven_door.mp4">open oven door</option>
+            <option value="mfiles/videos/fetch_glass_from_rack.mp4">fetch glass from rack</option>
+            <option value="mfiles/videos/fetch_tea_from_rack.mp4">fetch tea from rack</option>
+            <option value="mfiles/videos/fetch_towel_from_rack.mp4">fetch towel from rack</option>
+            <option value="mfiles/videos/fetch_vitamin_bottle_from_rack.mp4">fetch vitamin bottle from rack</option>
+            <option value="mfiles/videos/fridge_fetch_knife_from_organizer.mp4">fetch knife from organizer</option>
+            <option value="mfiles/videos/fridge_put_ketchup_bottle_inside.mp4">put ketchup inside the fridge</option>
+            <option value="mfiles/videos/fridge_put_tea_in_door.mp4">put tea in the door of the fridge</option>
+            <option value="mfiles/videos/fridge_put_tomato_can_inside.mp4">put tomato can inside the fridge</option>
+            <option value="mfiles/videos/fridge_put_yoghurt_in_door.mp4">put yoghurt in the door of the fridge</option>
+            <option value="mfiles/videos/fridge_take_tea_out_from_door.mp4">fetch tea from the door of the fridge</option>
+            <option value="mfiles/videos/fridge_take_yoghurt_out_from_door.mp4">fetch yoghurt from the door of the fridge</option>
+            <option value="mfiles/videos/fridge_take_tomato_can_out.mp4">fetch tomato can from inside the fridge</option>
+            <option value="mfiles/videos/fridge_take_vitamin_water_out.mp4">fetch water bottle from inside the fridge</option>
+            <option value="mfiles/videos/lift_pan_lid.mp4">lift pan lid</option>
+            <option value="mfiles/videos/pick_blue_plate.mp4">pick blue plate</option>
+            <option value="mfiles/videos/pick_white_plate.mp4">pick white plate</option>
+            <option value="mfiles/videos/pick_black_plate.mp4">pick black plate</option>
+            <option value="mfiles/videos/pick_blue_mug.mp4">pick blue mug</option>
+            <option value="mfiles/videos/pick_light_blue_bowl.mp4">pick light blue bowl</option>
+            <option value="mfiles/videos/pick_orange_from_bowl.mp4">pick orange from bowl</option>
+            <option value="mfiles/videos/pick_coffee_bag.mp4">pick coffee bag</option>
+            <option value="mfiles/videos/pick_starch_box.mp4">pick starch box</option>
+            <option value="mfiles/videos/place_glass_on_rack.mp4">place glass on rack</option>
+            <option value="mfiles/videos/put_coke_can_in_basket.mp4">put coke can in basket</option>
+            <option value="mfiles/videos/put_cream_cheese_in_basket.mp4">put cream cheese in basket</option>
+            <option value="mfiles/videos/put_orange_into_bowl.mp4">put orange into bowl</option>
+            <option value="mfiles/videos/put_pear_into_bowl.mp4">put pear into bowl</option>
+            <option value="mfiles/videos/wipe_towel.mp4">wipe towel</option>
+            </select>
+
+        <div id="video-container">
+            <video id="selected-video1" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo1() {
+                var selectElement = document.getElementById("video-select1");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video1");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo1();
+        </script>
+        <br><br>
+
+        <hr>
+        <h2>What matter for multi-task policy learning?</h2>
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/ablation.png" style="width:600">
+            </div>
+        </center>
+        <br><br>
+        <hr>
+
+    </section>
+
+   
+
+    <section>
+        This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
+    </section>
+    
+
+
+</div>
+</body>
+</html>

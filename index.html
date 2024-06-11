@@ -389,9 +389,9 @@ pre {
     <head>
         <title> BAKU: An Efficient Transformer for Multi-Task Policy Learning</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:description" content="OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation"/>
+        <meta property="og:description" content="BAKU: An Efficient Transformer for Multi-Task Policy Learning"/>
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-        <meta name="twitter:title" content="OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation">
+        <meta name="twitter:title" content="BAKU: An Efficient Transformer for Multi-Task Policy Learning">
         <meta name="twitter:description" content="">
         <meta name="twitter:image" content="">
     </head>
@@ -654,6 +654,38 @@ pre {
 
         <hr>
         <h2>BAKU on Long Horizon Tasks</h2>
+        We evaluate BAKU on <strong><span style="color: green;">5 long-horizon tasks</span></strong> in our xArm multi-task kitchen environment. BAKU with
+        an average of just 19 demonstrations per task achieves an <strong><span style="color: green;">84% success rate</span></strong>, a <strong><span style="color: green;">18% improvement</span></strong> over our strongest baseline, MT-ACT. 
+        All videos are played at 1X speed.
+
+        <h3>Long-horizon Rollouts</h3>
+        <label for="video-select3">Task:</label>
+        <select id="video-select3" onchange="displayVideo2()">
+            <option value="mfiles/long_horizon_videos/set_up_table.mp4">set up the table</option>
+            <option value="mfiles/long_horizon_videos/pick_broom_and_sweep.mp4">pick broom and sweep</option>
+            <option value="mfiles/long_horizon_videos/pick_towel_and_wipe.mp4">pick towel and wipe</option>
+            <option value="mfiles/long_horizon_videos/take_bowl_out_of_oven.mp4">take the bowl out of the oven</option>
+            <option value="mfiles/long_horizon_videos/fridge_yoghurt_in_water_out.mp4">put yoghurt inside and take water bottle out of the fridge</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video3" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo3() {
+                var selectElement = document.getElementById("video-select3");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video3");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo3();
+        </script>
+        <br><br>
 
         <hr>
         <h2>What matter for multi-task policy learning?</h2>

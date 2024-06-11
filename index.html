@@ -405,25 +405,28 @@ pre {
         BAKU: An Efficient Transformer for Multi-Task Policy Learning
     </div>
 
-    <!-- <div id="authors">
+    <div id="authors">
         <center>
             <div class="author-row-new">
-                <a href="">ABCD*</a>,
-                <a href="">EFGH*</a>
+                <a href="https://siddhanthaldar.github.io/">Siddhant Haldar</a>,
+                <a href="https://www.linkedin.com/in/zhuoran-peng-27678622b">Zhuoran Peng</a>,
+                <a href="https://www.lerrelpinto.com/">Lerrel Pinto</a>
             </div>
         </center>
-        <center>
-
-        <br>* Equal contribution
+        <!-- <center> -->
+        <div class="affil-row">
+            <div class="venue text-center"><b>New York University</b></div>
+        </div>
 
         </center>
+        <br>
 
         <div style="clear: both">
-            <div class="paper-btn-parent">
+            <!-- <div class="paper-btn-parent">
                 <a class="paper-btn" href="">
                         <span class="material-icons"> description </span> 
                     Paper
-                </a>
+                </a> -->
             <div class="paper-btn-parent">
                 <a class="paper-btn" href="">
                         <span class="material-icons"> description </span> 
@@ -436,7 +439,7 @@ pre {
                 </a>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <br>
 <!-- 
@@ -560,10 +563,10 @@ pre {
 
         <hr>
         <h2>Real World Rollouts</h2>
-        Utilizing BAKU, we execute a <strong><span style="color: green;">total of 30 tasks</span></strong> on our xArm multi-task kitchen environment.
-        All videos are played at 1X speed.
+        Utilizing BAKU, we execute a <strong><span style="color: green;">total of 30 tasks</span></strong> on our xArm multi-task kitchen environment. BAKU with
+        an average of just 17 demonstrations per task achieves a <strong><span style="color: green;">91% success rate</span></strong> with a VQ-BeT, a <strong><span style="color: green;">35% improvement</span></strong> over the strongest baseline. All videos are played at 1X speed.
         <br>
-        <h3> Rollouts</h3>
+        <h3> Successful Rollouts</h3>
         <label for="video-select1">Task:</label>
         <select id="video-select1" onchange="displayVideo1()">
             <option value="mfiles/videos/close_oven_door.mp4">close oven door</option>
@@ -596,7 +599,7 @@ pre {
             <option value="mfiles/videos/put_orange_into_bowl.mp4">put orange into bowl</option>
             <option value="mfiles/videos/put_pear_into_bowl.mp4">put pear into bowl</option>
             <option value="mfiles/videos/wipe_towel.mp4">wipe towel</option>
-            </select>
+        </select>
 
         <div id="video-container">
             <video id="selected-video1" controls>
@@ -616,6 +619,41 @@ pre {
             displayVideo1();
         </script>
         <br><br>
+
+        <br>
+        <h3>Failed Rollouts</h3>
+        <label for="video-select2">Task:</label>
+        <select id="video-select2" onchange="displayVideo2()">
+            <option value="mfiles/failed_videos/close_oven_door_fail.mp4">close oven door</option>
+            <option value="mfiles/failed_videos/open_oven_door_fail.mp4">open oven door</option>
+            <option value="mfiles/failed_videos/fridge_put_tomato_can_inside_fail.mp4">put tea in the door of the fridge</option>
+            <option value="mfiles/failed_videos/fridge_put_tomato_can_inside_fail.mp4">put tomato can inside the fridge</option>
+            <option value="mfiles/failed_videos/lift_pan_lid_fail.mp4">lift pan lid</option>
+            <option value="mfiles/failed_videos/pick_orange_from_bowl_fail.mp4">pick orange from bowl</option>
+            <option value="mfiles/failed_videos/put_coke_can_in_basket_fail.mp4">put coke can in basket</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video2" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo2() {
+                var selectElement = document.getElementById("video-select2");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video2");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo2();
+        </script>
+        <br><br>
+
+        <hr>
+        <h2>BAKU on Long Horizon Tasks</h2>
 
         <hr>
         <h2>What matter for multi-task policy learning?</h2>

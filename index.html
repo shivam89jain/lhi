@@ -571,117 +571,107 @@ pre {
         <hr>
         <h2>FrankaLHT policy Rollouts</h2>
         <br>
-        <h3> Successful Rollouts</h3>
-        <label for="video-select1">Task:</label>
-        <select id="video-select1" onchange="displayVideo1()">
+        <h3>Successful Rollouts</h3>
+        <label for="video-select1-franka">Task:</label>
+        <select id="video-select1-franka" onchange="displayVideo1Franka()">
             <option value="mfiles/franka_lht/success_1.mp4">pour water in glass</option>
             <option value="mfiles/franka_lht/success_2.mp4">food packing</option>
             <option value="mfiles/franka_lht/success_3.mp4">waste disposal</option>
             <option value="mfiles/franka_lht/success_4.mp4">bottle packing</option>
         </select>
 
-        <div id="video-container">
-            <video id="selected-video1" controls>
+        <div>
+            <video id="selected-video1-franka" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
 
         <script>
-            function displayVideo1() {
-                var selectElement = document.getElementById("video-select1");
+            function displayVideo1Franka() {
+                var selectElement = document.getElementById("video-select1-franka");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video1");
+                var videoElement = document.getElementById("selected-video1-franka");
                 videoElement.src = selectedVideo;
             }
-
-            // Display the first video when the page loads
-            displayVideo1();
+            displayVideo1Franka();
         </script>
         <br><br>
 
-        <br>
         <h3>Failed Rollouts</h3>
-        <label for="video-select2">Task:</label>
-        <select id="video-select2" onchange="displayVideo2()">
+        <label for="video-select2-franka">Task:</label>
+        <select id="video-select2-franka" onchange="displayVideo2Franka()">
             <option value="mfiles/franka_lht/fail_1.mp4">waste disposal</option>
             <option value="mfiles/franka_lht/fail_2.mp4">bottle packing</option>
             <option value="mfiles/franka_lht/fail_3.mp4">carrot in basket</option>
         </select>
 
-        <div id="video-container">
-            <video id="selected-video2" controls>
+        <div>
+            <video id="selected-video2-franka" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
 
         <script>
-            function displayVideo2() {
-                var selectElement = document.getElementById("video-select2");
+            function displayVideo2Franka() {
+                var selectElement = document.getElementById("video-select2-franka");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video2");
+                var videoElement = document.getElementById("selected-video2-franka");
                 videoElement.src = selectedVideo;
             }
-
-            // Display the first video when the page loads
-            displayVideo2();
+            displayVideo2Franka();
         </script>
         <br><br>
 
         <hr>
         <h2>Real World policy Rollouts</h2>
         <br>
-        <h3> Successful Rollouts</h3>
-        <label for="video-select1">Task:</label>
-        <select id="video-select1" onchange="displayVideo1()">
+        <h3>Successful Rollouts</h3>
+        <label for="video-select1-real">Task:</label>
+        <select id="video-select1-real" onchange="displayVideo1Real()">
             <option value="mfiles/real_world/success_1.mp4">can and tray disposal</option>
             <option value="mfiles/real_world/success_2.mp4">sunscreen and tray disposal</option>
             <option value="mfiles/real_world/success_3.mp4">vegetable in basket</option>
         </select>
 
-        <div id="video-container">
-            <video id="selected-video1" controls>
+        <div>
+            <video id="selected-video1-real" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
 
         <script>
-            function displayVideo1() {
-                var selectElement = document.getElementById("video-select1");
+            function displayVideo1Real() {
+                var selectElement = document.getElementById("video-select1-real");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video1");
+                var videoElement = document.getElementById("selected-video1-real");
                 videoElement.src = selectedVideo;
             }
-
-            // Display the first video when the page loads
-            displayVideo1();
+            displayVideo1Real();
         </script>
         <br><br>
 
-        <br>
         <h3>Failed Rollouts</h3>
-        <label for="video-select2">Task:</label>
-        <select id="video-select2" onchange="displayVideo2()">
+        <label for="video-select2-real">Task:</label>
+        <select id="video-select2-real" onchange="displayVideo2Real()">
             <option value="mfiles/real_world/fail_1.mp4">can and tray disposal</option>
             <option value="mfiles/real_world/fail_2.mp4">jar disposal</option>
             <option value="mfiles/real_world/fail_3.mp4">fruits in basket</option>
         </select>
 
-        <div id="video-container">
-            <video id="selected-video2" controls>
+        <div>
+            <video id="selected-video2-real" controls>
                 Your browser does not support the video tag.
             </video>
         </div>
 
         <script>
-            function displayVideo2() {
-                var selectElement = document.getElementById("video-select2");
+            function displayVideo2Real() {
+                var selectElement = document.getElementById("video-select2-real");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
-                var videoElement = document.getElementById("selected-video2");
+                var videoElement = document.getElementById("selected-video2-real");
                 videoElement.src = selectedVideo;
             }
-
-            // Display the first video when the page loads
-            displayVideo2();
+            displayVideo2Real();
         </script>
         <br><br>
 
